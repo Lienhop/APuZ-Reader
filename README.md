@@ -2,6 +2,11 @@
 
 APuZ Reader is an Android app designed to explore and read editions of the German magazine "Aus Politik und Zeitgeschichte" (APuZ).
 
+<p align="middle">
+  <img title="Overview Mode" src="https://github.com/user-attachments/assets/61477d5f-cfa2-491a-af63-5b85ce16d2bd" width="400" hspace=30 />
+  <img title="Reading Mode" src="https://github.com/user-attachments/assets/7f8c5b5b-44b2-4bd6-a5b5-9bcfdaa9101e" width="400" /> 
+</p>
+
 ## Technical Details
 
 - Built for Android using Kotlin and Jetpack Compose
