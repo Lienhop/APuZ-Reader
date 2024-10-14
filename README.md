@@ -22,6 +22,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ### Planned Features:
 
 - Storing editions in a "Favorites" list for easier access
+- Adding a search functionality
 - Extending the library to more free content from the [bpb](https://www.bpb.de/).
 
 ## License
