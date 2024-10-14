@@ -1,6 +1,6 @@
 # APuZ Reader
 
-APuZ Reader is an Android app designed to explore and read editions of the German magazine "Aus Politik und Zeitgeschichte" (APuZ). A signed APK is provided and can be found under [app/release](https://github.com/Lienhop/APuZ-Reader/tree/main/app/release)
+APuZ Reader is an Android app designed to explore and read editions of the German magazine "Aus Politik und Zeitgeschichte" (APuZ). A signed APK is provided and can be found under [app/release](https://github.com/Lienhop/APuZ-Reader/tree/main/app/release).
 
 <p align="middle">
   <img title="Overview Mode" src="https://github.com/user-attachments/assets/61477d5f-cfa2-491a-af63-5b85ce16d2bd" width=300" hspace=20 />
