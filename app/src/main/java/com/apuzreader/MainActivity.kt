@@ -35,6 +35,9 @@ import com.google.gson.reflect.TypeToken
 import com.apuzreader.ui.LoadingScreen
 import com.apuzreader.ui.MainScreen
 import com.apuzreader.models.ApuzData
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+import java.util.Locale
 
 class MainActivity : ComponentActivity() {
 
@@ -134,12 +137,16 @@ class MainActivity : ComponentActivity() {
                     val src = item.link.toString()
                     val pageSrc = getPageSource(src)
                     val imgUrl = getImgAndUrl(pageSrc)
+                    Log.e("DATE", parseDate(item.pubDate.toString()).toString())
                     val apuzData = ApuzData(
                         title = title,
                         description = item.description ?: "",
+                        date = parseDate(item.pubDate.toString()),
+                        //date = LocalDate.now(),
                         imageUrl = imgUrl.first,
                         pdfUrl = imgUrl.second
                     )
+                    println(apuzData)
                     existingList.add(apuzData)
                 }
             }
@@ -150,6 +157,14 @@ class MainActivity : ComponentActivity() {
         }
         return existingList
     }
+
+    fun parseDate(dateString: String?): LocalDate? {
+        if (dateString.isNullOrEmpty()) return null
+        val trimmedDateString = dateString.dropLast(15).drop(5)
+        val formatter = DateTimeFormatter.ofPattern("dd MMM yyyy", Locale.ENGLISH)
+        return LocalDate.parse(trimmedDateString, formatter)
+    }
+
 
     private fun launchPdfFromUrl(url: String, title: String) {
         startActivity(

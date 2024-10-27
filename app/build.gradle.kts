@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.apuzreader"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0.0"
@@ -65,6 +65,7 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
     implementation("com.fleeksoft.ksoup:ksoup-lite:0.1.9")
     implementation("com.google.code.gson:gson:2.10.1")
+    implementation("com.google.accompanist:accompanist-flowlayout:0.30.1")
     implementation(libs.androidx.appcompat)
     implementation(libs.firebase.crashlytics.buildtools)
     testImplementation(libs.junit)

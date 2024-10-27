@@ -11,11 +11,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
+import java.time.LocalDate
 
 @Composable
 fun ApuzEdition(
     title: String,
     description: String,
+    date: LocalDate?,
     imageUrl: String,
     onClick: () -> Unit
 ) {
