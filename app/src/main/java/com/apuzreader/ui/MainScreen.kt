@@ -24,7 +24,7 @@ fun MainScreen(
     onLaunchPdf: (String, String) -> Unit
 ) {
     var searchQuery by remember { mutableStateOf("") }
-    //var sortOrder by remember { mutableStateOf(SortOrder.NEWEST) }
+    var sortOrder by remember { mutableStateOf(SortOrder.NEWEST) }
 
     // Add this for debugging
     LaunchedEffect(Unit) {
@@ -79,11 +79,10 @@ fun MainScreen(
                         it.title.contains(searchQuery, ignoreCase = true) ||
                                 it.description.contains(searchQuery, ignoreCase = true)
                     }
-//                    .sortedWith(when (sortOrder) {
-//                        SortOrder.NEWEST -> compareByDescending { it.date ?: LocalDate.MIN }
-//                        SortOrder.OLDEST -> compareBy { it.date ?: LocalDate.MAX }
-//                    }
-                    //)
+                    .sortedWith(when (sortOrder) {
+                        SortOrder.NEWEST -> compareByDescending { it.date ?: LocalDate.MIN }
+                        SortOrder.OLDEST -> compareBy { it.date ?: LocalDate.MAX }
+                    })
                     .also { Log.d("MainScreen", "Filtered list size: ${it.size}") }
             }
         }
