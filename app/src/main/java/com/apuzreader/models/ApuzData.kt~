@@ -7,6 +7,5 @@ data class ApuzData(
     val description: String,
     val date: LocalDate?,
     val imageUrl: String,
-    val pdfUrl: String,
-    var isFavorite: Boolean = false
+    val pdfUrl: String
 )

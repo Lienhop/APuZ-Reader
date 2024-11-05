@@ -52,12 +52,14 @@ class MainActivity : ComponentActivity() {
 
     private val apuzRssPdf = "https://www.bpb.de/rss-feed/230868.rss"
 
+    @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             val apuzList = remember { mutableStateOf(loadApuzList()) }
             val isLoading = remember { mutableStateOf(true) }
             val drawerState = rememberDrawerState(DrawerValue.Closed)
+            val scope = rememberCoroutineScope()
 
             LaunchedEffect(Unit) {
                 apuzList.value = getApuzEditions(apuzRssPdf)
@@ -68,6 +70,20 @@ class MainActivity : ComponentActivity() {
             ApuzReaderTheme {
                 Scaffold(
                     modifier = Modifier.fillMaxSize(),
+//                    topBar = {
+//                        TopAppBar(
+//                            navigationIcon = {
+//                                IconButton(onClick = {
+//                                    scope.launch {
+//                                        drawerState.open()
+//                                    }
+//                                }) {
+//                                    Icon(Icons.Default.Menu, contentDescription = "Menu")
+//                                }
+//                            },
+//                            title = { Text("APuZ Reader") }
+//                        )
+//                    }
                 ) { paddingValues ->
                     if (isLoading.value) {
                         LoadingScreen(modifier = Modifier.padding(paddingValues))
